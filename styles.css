@@ -1,0 +1,99 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffccff, #ff99cc);
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+	height: 400px;
+}
+
+h1 {
+    font-weight: 700;
+    color: #ff4081;
+}
+
+#lizard {
+    width: 400px;
+    height: auto;
+    transition: transform 0.5s, filter 0.5s;
+    cursor: pointer;
+}
+
+#lizard.animate {
+    transform: scale(1.2) rotate(10deg);
+    filter: brightness(1.2);
+}
+
+#message {
+    font-size: 24px;
+    color: #ff4081;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    font-weight: 700;
+}
+
+#message.show {
+    opacity: 1;
+}
+
+#hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #ff4081;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.sparkle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, #fff 0%, #ffccff 60%, transparent 100%);
+    border-radius: 50%;
+    animation: sparkle 1.5s infinite;
+}
+
+@keyframes sparkle {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
