@@ -37,8 +37,10 @@ h1 {
     outline: none;
 	
 }
-#lizard:focus {
+#lizard:focus,
+#lizard:active{
     outline: none; 
+    -webkit-tap-highlight-color: transparent;
 }
 #lizard.animate {
     transform: scale(1.2) rotate(10deg);
